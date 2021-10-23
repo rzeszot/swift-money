@@ -8,7 +8,7 @@ let package = Package(
     .library(name: "Money", targets: ["Money"])
   ],
   dependencies: [
-    .package(name: "Currency", url: "git@github.com:rzeszot/swift-currency.git", branch: "main")
+    .package(name: "Currency", url: "https://github.com/rzeszot/swift-currency.git", branch: "main")
   ],
   targets: [
     .target(name: "Money", dependencies: ["Currency"]),

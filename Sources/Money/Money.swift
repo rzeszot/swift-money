@@ -9,5 +9,12 @@ public struct Money {
     self.amount = amount
     self.currency = currency
   }
+
+  // MARK: -
+
+  public func compatible(with money: Money) -> Bool {
+    currency == money.currency
+  }
+
 }
 
