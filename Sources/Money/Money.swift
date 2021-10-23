@@ -18,3 +18,15 @@ public struct Money {
 
 }
 
+extension Money: Equatable {
+  public static func == (lhs: Money, rhs: Money) -> Bool {
+    lhs.amount == rhs.amount
+  }
+}
+
+extension Money: Comparable {
+  public static func < (lhs: Money, rhs: Money) -> Bool {
+    lhs.amount < rhs.amount
+  }
+}
+

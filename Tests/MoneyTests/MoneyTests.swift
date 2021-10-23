@@ -3,7 +3,7 @@
 import XCTest
 import Money
 
-class MoneyTests: XCTestCase {
+final class MoneyTests: XCTestCase {
 
   func test_init() {
     let money = Money(amount: 12.34, currency: "EUR")
@@ -27,6 +27,29 @@ class MoneyTests: XCTestCase {
     let b = Money(amount: 4.00, currency: "EUR")
 
     XCTAssertFalse(a.compatible(with: b))
+  }
+
+  // MARK: - Comparable
+
+    func test_comparable() {
+      let sut = Money(amount: 1.23, currency: "EUR")
+
+      XCTAssertLessThan(sut, Money(amount: 99.00, currency: "EUR"))
+      XCTAssertGreaterThan(sut, Money(amount: 1.00, currency: "EUR"))
+    }
+
+  // MARK: - Equatable
+
+  func test_equal() {
+    let sut = Money(amount: 0.99, currency: "EUR")
+
+    XCTAssertEqual(sut, Money(amount: 0.99, currency: "EUR"))
+  }
+
+  func test_not_equal() {
+    let sut = Money(amount: 0.99, currency: "EUR")
+
+    XCTAssertNotEqual(sut, Money(amount: 1.00, currency: "EUR"))
   }
 
 }
