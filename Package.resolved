@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Currency",
+        "repositoryURL": "git@github.com:rzeszot/swift-currency.git",
+        "state": {
+          "branch": "main",
+          "revision": "357b696beba78c15974a4d8e98106f359fd4bd21",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
