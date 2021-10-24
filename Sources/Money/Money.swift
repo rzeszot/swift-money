@@ -56,4 +56,3 @@ extension Money: Codable {
     try container.encode("\(amount) \(String(currency))")
   }
 }
-

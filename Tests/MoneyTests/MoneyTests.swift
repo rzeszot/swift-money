@@ -21,7 +21,6 @@ final class MoneyTests: XCTestCase {
     XCTAssertTrue(a.compatible(with: b))
   }
 
-
   func test_not_compatible() {
     let a = Money(amount: 3.00, currency: "PLN")
     let b = Money(amount: 4.00, currency: "EUR")
@@ -92,4 +91,3 @@ final class MoneyTests: XCTestCase {
   }
 
 }
-
