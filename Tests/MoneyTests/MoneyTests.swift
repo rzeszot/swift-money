@@ -28,6 +28,14 @@ final class MoneyTests: XCTestCase {
     XCTAssertFalse(a.compatible(with: b))
   }
 
+  // MARK: - Rounding
+
+  func test_rounding() {
+    let sut = Money(amount: 12.345678, currency: "PLN").round(scale: 2, rounding: .down)
+
+    XCTAssertEqual(sut.amount, 12.34)
+  }
+
   // MARK: - Comparable
 
     func test_comparable() {

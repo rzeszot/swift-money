@@ -16,6 +16,12 @@ public struct Money {
     currency == money.currency
   }
 
+  // MARK: -
+
+  public func round(scale: Int, rounding: Decimal.RoundingMode) -> Money {
+    Money(amount: amount.round(scale: scale, rounding: rounding), currency: currency)
+  }
+
 }
 
 extension Money: Equatable {
