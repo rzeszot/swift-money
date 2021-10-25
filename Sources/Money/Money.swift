@@ -2,6 +2,7 @@ import Foundation
 import Currency
 
 public struct Money {
+
   public let amount: Decimal
   public let currency: Currency
 
@@ -21,4 +22,5 @@ public struct Money {
   public func round(scale: Int, rounding: Decimal.RoundingMode) -> Money {
     Money(amount: amount.round(scale: scale, rounding: rounding), currency: currency)
   }
+
 }
