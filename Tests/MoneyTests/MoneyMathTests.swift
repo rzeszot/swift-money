@@ -9,11 +9,11 @@ final class MoneyMathTests: XCTestCase {
 
   func test_add_function() throws {
     let a = Money(amount: 1.99, currency: "ADD")
-    let b = Money(amount: 2.99, currency: "ADD")
+    let b = Money(amount: 2.01, currency: "ADD")
 
-    let sut = try a.add(b)
+    let sut = try a.add(b).round(scale: 2, rounding: .bankers)
 
-    XCTAssertEqual(sut, Money(amount: 4.98, currency: "ADD"))
+    XCTAssertEqual(sut, Money(amount: 4, currency: "ADD"))
   }
 
   func test_add_exception() throws {
