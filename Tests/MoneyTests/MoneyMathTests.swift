@@ -71,10 +71,17 @@ final class MoneyMathTests: XCTestCase {
         XCTAssertEqual(result, Money(amount: 9.95, currency: .eur))
     }
 
-    func test_multiply_operator() {
+    func test_multiply_operator_int() {
         let a = Money(amount: 0.1, currency: .eur)
-        let result = a * 5
+        let result = a * Int(5)
 
         XCTAssertEqual(result, Money(amount: 0.5, currency: .eur))
+    }
+
+    func test_multiply_operator_decimal() {
+        let a = Money(amount: 0.2, currency: .eur)
+        let result = a * Decimal(5)
+
+        XCTAssertEqual(result, Money(amount: 1.0, currency: .eur))
     }
 }
