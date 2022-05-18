@@ -1,26 +1,24 @@
-import Foundation
 import Currency
+import Foundation
 
 public struct Money {
+    public let amount: Decimal
+    public let currency: Currency
 
-  public let amount: Decimal
-  public let currency: Currency
+    public init(amount: Decimal, currency: Currency) {
+        self.amount = amount
+        self.currency = currency
+    }
 
-  public init(amount: Decimal, currency: Currency) {
-    self.amount = amount
-    self.currency = currency
-  }
+    // MARK: -
 
-  // MARK: -
+    public func compatible(with money: Money) -> Bool {
+        currency == money.currency
+    }
 
-  public func compatible(with money: Money) -> Bool {
-    currency == money.currency
-  }
+    // MARK: -
 
-  // MARK: -
-
-  public func round(scale: Int, rounding: Decimal.RoundingMode) -> Money {
-    Money(amount: amount.round(scale: scale, rounding: rounding), currency: currency)
-  }
-
+    public func round(scale: Int, rounding: Decimal.RoundingMode) -> Money {
+        Money(amount: amount.round(scale: scale, rounding: rounding), currency: currency)
+    }
 }
